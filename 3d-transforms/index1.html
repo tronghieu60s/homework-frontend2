@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --box-width: 250px;
+            --box-heigh: 250px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .ct-wrapper {
+            width: 100%;
+            height: 100vh;
+        }
+
+        .ct-box {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid #000;
+            width: var(--box-width);
+            height: var(--box-heigh);
+            perspective: 600px;
+            z-index: 10;
+            cursor: pointer;
+        }
+
+        .ct-box-cover {
+            width: 100%;
+            height: 100%;
+            background-color: orange;
+            transition: 0.8s;
+        }
+
+        .ct-box-top,
+        .ct-box-right,
+        .ct-box-bottom,
+        .ct-box-left {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0% 0%;
+            z-index: 5;
+        }
+
+        .ct-box-top {
+            transform: rotate(-135deg);
+        }
+
+        .ct-box-right {
+            transform: rotate(-45deg);
+        }
+
+        .ct-box-bottom {
+            transform: rotate(45deg);
+        }
+
+        .ct-box-left {
+            transform: rotate(135deg);
+        }
+
+        .ct-box-top:hover~.ct-box-cover {
+            transform: rotateX(45deg);
+        }
+
+        .ct-box-bottom:hover~.ct-box-cover {
+            transform: rotateX(-45deg);
+        }
+
+        .ct-box-left:hover~.ct-box-cover {
+            transform: rotateY(-45deg);
+        }
+
+        .ct-box-right:hover~.ct-box-cover {
+            transform: rotateY(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct-wrapper">
+        <div class="ct-box">
+            <div class="ct-box-top"></div>
+            <div class="ct-box-right"></div>
+            <div class="ct-box-bottom"></div>
+            <div class="ct-box-left"></div>
+            <div class="ct-box-cover"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --box-width: 250px;
+            --box-height: 250px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .ct-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 600px;
+        }
+
+        .ct-box {
+            position: relative;
+            width: var(--box-width);
+            height: var(--box-height);
+            z-index: 10;
+            cursor: pointer;
+            transform-style: preserve-3d;
+            animation: rotate-ani 5s infinite linear;
+        }
+
+        .ct-box-front,
+        .ct-box-right,
+        .ct-box-back,
+        .ct-box-left {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transform-style: preserve-3d;
+        }
+
+        .ct-box-front span,
+        .ct-box-right span,
+        .ct-box-back span,
+        .ct-box-left span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 2em;
+            font-weight: 700;
+            transform: translate(-50%, -50%) translateZ(50px);
+        }
+
+        .ct-box-front {
+            background-color: red;
+            transform: rotateY(0) translateZ(calc(var(--box-width) / 2));
+        }
+
+        .ct-box-right {
+            background-color: yellow;
+            transform: rotateY(90deg) translateZ(calc(var(--box-width) / 2));
+        }
+
+        .ct-box-back {
+            background-color: green;
+            transform: rotateY(180deg) translateZ(calc(var(--box-width) / 2));
+        }
+
+        .ct-box-left {
+            background-color: blue;
+            transform: rotateY(-90deg) translateZ(calc(var(--box-width) / 2));
+        }
+
+        @keyframes rotate-ani {
+            0% {
+                transform: rotateY(0deg);
+            }
+
+            100% {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct-wrapper">
+        <div class="ct-box">
+            <div class="ct-box-front"><span>Front</span></div>
+            <div class="ct-box-right"><span>Right</span></div>
+            <div class="ct-box-back"><span>Back</span></div>
+            <div class="ct-box-left"><span>Left</span></div>
+        </div>
+    </div>
+</body>
+
+</html>

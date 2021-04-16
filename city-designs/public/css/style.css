@@ -39,6 +39,8 @@
   border-radius: 20px;
   opacity: 0.8;
   transition: 0.8s;
+  perspective: 600px;
+  transform-style: preserve-3d;
 }
 
 .ct-logo-cover-city {
@@ -50,7 +52,7 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) translateZ(20px);
 }
 
 .ct-logo-cover-city:before {
@@ -62,7 +64,7 @@
   top: 50%;
   left: 0;
   margin-left: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(20px);
 }
 
 .ct-logo-cover-city:after {
@@ -74,7 +76,7 @@
   top: 50%;
   right: 0;
   margin-right: 20px;
-  transform: translateY(-50%);
+  transform: translateY(-50%) translateZ(20px);
 }
 
 .ct-logo-cover-name {
@@ -85,6 +87,7 @@
   font-weight: 800;
   position: absolute;
   bottom: 10%;
+  transform: translateZ(20px);
 }
 
 .ct-logo-top,
@@ -138,34 +141,77 @@
   right: 0;
   bottom: 0;
   left: 0;
+  overflow: hidden;
 }
 
 .ct-light-item {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   bottom: 0;
-  background-color: yellow;
+  background-color: red;
   border-radius: 50%;
   mix-blend-mode: multiply;
+  box-shadow: 0 0 20px 5px red;
+  opacity: 0;
 }
 
 .ct-light-item:nth-child(1) {
   left: 0;
+  animation: light-ani-vertical 5s infinite,
+    light-ani-horizontal 4s infinite alternate;
+  animation-delay: 2s;
 }
 
 .ct-light-item:nth-child(2) {
   left: 20%;
+  animation: light-ani-vertical 5s infinite,
+    light-ani-horizontal 3s infinite alternate;
+  animation-delay: 1s;
 }
 
 .ct-light-item:nth-child(3) {
   left: 40%;
+  animation: light-ani-vertical 5s infinite,
+    light-ani-horizontal 6s infinite alternate;
+  animation-delay: 0.5s;
 }
 
 .ct-light-item:nth-child(4) {
   left: 60%;
+  animation: light-ani-vertical 5s infinite,
+    light-ani-horizontal 3s infinite alternate;
+  animation-delay: 0s;
 }
 
 .ct-light-item:nth-child(5) {
   left: 80%;
+  animation: light-ani-vertical 5s 0.4s infinite,
+    light-ani-horizontal 5s infinite alternate;
+  animation-delay: 0.3s;
+}
+
+@keyframes light-ani-vertical {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 70%;
+    opacity: 0;
+  }
+}
+
+@keyframes light-ani-horizontal {
+  0% {
+    margin-left: 0px;
+  }
+
+  100% {
+    margin-left: 300px;
+  }
 }

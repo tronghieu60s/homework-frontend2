@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --box-width: 250px;
+            --box-height: 250px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .ct-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ct-box {
+            position: relative;
+            width: var(--box-width);
+            height: var(--box-height);
+            border: 1px solid #000;
+            cursor: pointer;
+            perspective: 600px;
+            transform-style: preserve-3d;
+        }
+
+        .ct-box-top,
+        .ct-box-right,
+        .ct-box-bottom,
+        .ct-box-left {
+            position: absolute;
+            width: 70%;
+            height: 70%;
+            top: 50%;
+            left: 50%;
+            transform-origin: 0% 0%;
+            z-index: 10;
+        }
+
+        .ct-box-top {
+            transform: rotate(-135deg);
+        }
+
+        .ct-box-right {
+            transform: rotate(-45deg);
+        }
+
+        .ct-box-bottom {
+            transform: rotate(45deg);
+        }
+
+        .ct-box-left {
+            transform: rotate(135deg);
+        }
+
+        .ct-box-top:hover~.ct-box-cover {
+            transform: rotateX(45deg);
+        }
+
+        .ct-box-bottom:hover~.ct-box-cover {
+            transform: rotateX(-45deg);
+        }
+
+        .ct-box-left:hover~.ct-box-cover {
+            transform: rotateY(-45deg);
+        }
+
+        .ct-box-right:hover~.ct-box-cover {
+            transform: rotateY(45deg);
+        }
+
+        .ct-box-cover {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transition: 0.8s;
+            transform-style: preserve-3d;
+            z-index: 5;
+        }
+
+        .ct-box-cover-front,
+        .ct-box-cover-top,
+        .ct-box-cover-right,
+        .ct-box-cover-bottom,
+        .ct-box-cover-left {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            transform-style: preserve-3d;
+        }
+
+        .ct-box-cover-front {
+            background-color: red;
+            transform: rotateY(0) translateZ(0);
+        }
+
+        .ct-box-cover-top {
+            top: calc(var(--box-width) - (var(--box-width) / 7));
+            background-color: blue;
+            transform: rotateX(90deg) translateY(-20px) translateZ(calc(var(--box-width) - 20px));
+        }
+
+        .ct-box-cover-right {
+            right: calc(var(--box-width) - (var(--box-width) / 7));
+            background-color: violet;
+            transform: rotateY(90deg) translateX(20px) translateZ(calc(var(--box-width) - 20px));
+        }
+
+        .ct-box-cover-bottom {
+            bottom: calc(var(--box-width) - (var(--box-width) / 7));
+            background-color: rebeccapurple;
+            transform: rotateX(-90deg) translateY(20px) translateZ(calc(var(--box-width) - 20px));
+        }
+
+        .ct-box-cover-left {
+            left: calc(var(--box-width) - (var(--box-width) / 7));
+            background-color: green;
+            transform: rotateY(-90deg) translateX(-20px) translateZ(calc(var(--box-width) - 20px));
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct-wrapper">
+        <div class="ct-box">
+            <div class="ct-box-top"></div>
+            <div class="ct-box-right"></div>
+            <div class="ct-box-bottom"></div>
+            <div class="ct-box-left"></div>
+            <div class="ct-box-cover">
+                <div class="ct-box-cover-front">F</div>
+                <div class="ct-box-cover-top">T</div>
+                <div class="ct-box-cover-right">R</div>
+                <div class="ct-box-cover-bottom">B</div>
+                <div class="ct-box-cover-left">L</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
