@@ -43,49 +43,85 @@
         }
 
         .ct-box-top,
+        .ct-box-top-left,
         .ct-box-right,
+        .ct-box-top-right,
         .ct-box-bottom,
-        .ct-box-left {
+        .ct-box-bottom-right,
+        .ct-box-left,
+        .ct-box-bottom-left {
             position: absolute;
-            width: 70%;
-            height: 70%;
-            top: 50%;
-            left: 50%;
-            transform-origin: 0% 0%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             z-index: 5;
         }
 
         .ct-box-top {
-            transform: rotate(-135deg);
+            clip-path: polygon(50% 50%, 33% 0, 67% 0);
+        }
+
+        .ct-box-top-left {
+            clip-path: polygon(50% 50%, 0 33%, 0 0, 33% 0);
         }
 
         .ct-box-right {
-            transform: rotate(-45deg);
+            clip-path: polygon(50% 50%, 100% 33%, 100% 67%);
+        }
+
+        .ct-box-top-right {
+            clip-path: polygon(50% 50%, 67% 0, 100% 0, 100% 33%)
         }
 
         .ct-box-bottom {
-            transform: rotate(45deg);
+            clip-path: polygon(50% 50%, 33% 100%, 67% 100%);
+        }
+
+        .ct-box-bottom-right {
+            clip-path: polygon(50% 50%, 67% 100%, 100% 100%, 100% 67%)
         }
 
         .ct-box-left {
-            transform: rotate(135deg);
+            clip-path: polygon(50% 50%, 0 33%, 0 67%);
+        }
+
+        .ct-box-bottom-left {
+            clip-path: polygon(50% 50%, 0 67%, 0 100%, 33% 100%);
         }
 
         .ct-box-top:hover~.ct-box-cover {
             transform: rotateX(-45deg);
         }
 
+        .ct-box-top-left:hover~.ct-box-cover {
+            transform: rotateX(-45deg) rotateY(45deg);
+        }
+
+        .ct-box-right:hover~.ct-box-cover {
+            transform: rotateY(-45deg);
+        }
+
+        .ct-box-top-right:hover~.ct-box-cover {
+            transform: rotateX(-45deg) rotateY(-45deg);
+        }
+
         .ct-box-bottom:hover~.ct-box-cover {
             transform: rotateX(45deg);
+        }
+
+        .ct-box-bottom-right:hover~.ct-box-cover {
+            transform: rotateX(45deg) rotateY(-45deg);
         }
 
         .ct-box-left:hover~.ct-box-cover {
             transform: rotateY(45deg);
         }
 
-        .ct-box-right:hover~.ct-box-cover {
-            transform: rotateY(-45deg);
+        .ct-box-bottom-left:hover~.ct-box-cover {
+            transform: rotateX(45deg) rotateY(45deg);
         }
+
     </style>
 </head>
 
@@ -93,9 +129,13 @@
     <div class="ct-wrapper">
         <div class="ct-box">
             <div class="ct-box-top"></div>
+            <div class="ct-box-top-left"></div>
             <div class="ct-box-right"></div>
+            <div class="ct-box-top-right"></div>
             <div class="ct-box-bottom"></div>
+            <div class="ct-box-bottom-right"></div>
             <div class="ct-box-left"></div>
+            <div class="ct-box-bottom-left"></div>
             <div class="ct-box-cover"></div>
         </div>
     </div>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --box-width: 400px;
+            --box-heigh: 400px;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .ct-form {
+            position: fixed;
+            top: 5%;
+            right: 5%;
+        }
+
+        .ct-wrapper {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ct-box {
+            position: relative;
+            border: 1px solid #000;
+            width: var(--box-width);
+            height: var(--box-heigh);
+            perspective: 600px;
+            z-index: 10;
+            cursor: pointer;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .ct-box-rotate {
+            animation: rotateBox 5s infinite linear;
+        }
+
+        @keyframes rotateBox {
+            0% {
+                transform: rotate(0);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .ct-box-child {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 5;
+        }
+
+        .ct-box-child span {
+            position: absolute;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ct-wrapper">
+        <div class="ct-form">
+            <textarea id="inputText" cols="30" rows="10"></textarea>
+            <div><button id="btnGenerate" type="submit">Generate</button></div>
+        </div>
+        <div>
+            <button id="btnRotate">Bật/Tắt Xoay</button>
+            <div id="boxParent" class="ct-box"></div>
+        </div>
+    </div>
+
+    <script>
+        const getRandomColor = () => {
+            let letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++)
+                color += letters[Math.floor(Math.random() * 16)];
+            return color;
+        }
+
+        const getTanDeg = (deg) => {
+            let rad = deg * Math.PI / 180;
+            return Math.tan(rad);
+        }
+
+        btnRotate.addEventListener('click', () => {
+            boxParent.classList.toggle("ct-box-rotate");
+        });
+
+        btnGenerate.addEventListener("click", () => {
+            let names = inputText.value.split('\n');
+            names = names.filter(o => o != "");
+            
+            const alpha = 360 / (names.length * 2);
+            const point1 = 50 - 50 * getTanDeg(alpha);
+            const point2 = 50 + 50 * getTanDeg(alpha);
+
+            let renderNames = "";
+            for (let i = 0; i < names.length; i += 1) {
+                const rotate = 360 / names.length * i;
+                renderNames += `<div class='ct-box-child' style='
+                clip-path: polygon(50% 50%, 0 ${point1}%, 0 ${point2}%);
+                background-color: ${getRandomColor()};
+                transform: rotate(${rotate}deg)
+                '><span>${names[i]}</span></div>`
+            }
+            boxParent.innerHTML = renderNames;
+        });
+    </script>
+</body>
+
+</html>
