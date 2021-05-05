@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="result"></ul>
+    <input id="input" type="text">
+    <button onclick="getData()">Get Data</button>
+    <h1 id="time"></h1>
+
+    <script>
+        fetch("data.json")
+            .then(res => res.json())
+            .then(res => res.map(o => `<li>${o.name} - ${o.age}</li>`).join(''))
+            .then(res => result.innerHTML = res)
+
+        function getData() {
+            const data = { name: input.value };
+            fetch("data.php", { method: "POST", body: JSON.stringify(data) })
+                .then(res => res.text())
+                .then(res => alert(res))
+        }
+
+        setInterval(() => {
+            time.innerHTML = new Date().toLocaleTimeString();
+        }, 1000);
+    </script>
+</body>
+
+</html>
