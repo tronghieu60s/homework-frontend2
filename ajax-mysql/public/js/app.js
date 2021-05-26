@@ -137,6 +137,9 @@ let page = 1;
 const perPage = 3;
 // handle click button
 btnLoading.addEventListener("click", async () => {
+  await spnLoading.classList.remove("d-none");
+  await wait(500);
+
   page += 1;
   const products = await ajaxRequest(urlProductsByPage, { perPage, page });
   // get next page
@@ -145,11 +148,7 @@ btnLoading.addEventListener("click", async () => {
     page: page + 1,
   });
 
-  // waiting a few minutes
-  spnLoading.classList.remove("d-none");
-  await wait(1000);
   spnLoading.classList.add("d-none");
-
   renderMoreData(products);
   // check next page exists products
   if (productsNextPage.length === 0) btnLoading.classList.add("d-none");
