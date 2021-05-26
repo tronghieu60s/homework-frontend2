@@ -107,12 +107,19 @@ $pageLinks = Pagination::createPageLinks($totalRow, $perPage, $page);
                     }
                     ?>
                 </div>
+                <div class="d-flex justify-content-center">
+                    <button id="btnLoading" type="button" class="btn btn-primary mt-3">Tải Thêm
+                        <div id="spnLoading" class="spinner-border spinner-border-sm d-none" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                    </button>
+                </div>
                 <div class="mt-3">
-                    <?php echo $pageLinks; ?>
+                    <?php //echo $pageLinks; 
+                    ?>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Modal -->
