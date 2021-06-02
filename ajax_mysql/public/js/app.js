@@ -19,6 +19,7 @@ function ajaxRequest(url, data) {
   );
 }
 
+// --- RENDER DATA
 function renderData(products) {
   // render list
   let renderList = "";
@@ -135,9 +136,8 @@ function renderSearchList(products, search) {
 // --- Load More
 let page = 1;
 const perPage = 3;
-// handle click button
 btnLoading.addEventListener("click", async () => {
-  await spnLoading.classList.remove("d-none");
+  spnLoading.classList.remove("d-none");
   await wait(500);
 
   page += 1;

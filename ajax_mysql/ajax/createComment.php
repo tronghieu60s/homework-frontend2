@@ -1,0 +1,21 @@
+<?php
+require_once '../config/database.php';
+require_once '../config/config.php';
+spl_autoload_register(function ($class_name) {
+    require '../app/models/' . $class_name . '.php';
+});
+
+$input = json_decode(file_get_contents('php://input'), true);
+
+$comment_author = $input['comment_author'];
+$comment_content = $input['comment_content'];
+$comment_rating = $input['comment_rating'];
+$product_id = $input['product_id'];
+
+$commentModel = new CommentModel();
+$item = $commentModel->createComment($comment_author, $comment_content, $comment_rating, $product_id);
+
+if ($item) {
+    $comments = $commentModel->getCommentsByIdProduct($product_id);
+    echo json_encode($comments);
+}
