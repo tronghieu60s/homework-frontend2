@@ -107,7 +107,7 @@ btnLikeProduct.addEventListener("click", async () => {
   // get data storage
   const dataStorage = JSON.parse(localStorage.getItem(".like_products")) || {};
   if (dataStorage[product_id])
-    return alert("Bạn chỉ được đánh giá một lần duy nhất.");
+    return alert("Bạn chỉ được đánh giá thích một lần duy nhất.");
 
   // rating database
   const product = await ajaxRequest(urlLikeProduct, { product_id });
