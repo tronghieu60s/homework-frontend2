@@ -17,6 +17,7 @@ stars.forEach((star, index) => {
 
 const urlCreateComment = "/ajax_mysql/ajax/createComment.php";
 const urlCommentsByIdProduct = "/ajax_mysql/ajax/getCommentsByProductId.php";
+const urlLikeProduct = "/ajax_mysql/ajax/likeProductById.php";
 
 (async () => {
   const id = productId.innerText;
@@ -99,3 +100,20 @@ function onRenderAverageStar(comments) {
 
   renderAverageStar.innerHTML = renderStar + ` - ${averageStars}/5 sao`;
 }
+
+btnLikeProduct.addEventListener("click", async () => {
+  const product_id = productId.innerText;
+
+  // get data storage
+  const dataStorage = JSON.parse(localStorage.getItem(".like_products")) || {};
+  if (dataStorage[product_id])
+    return alert("Bạn chỉ được đánh giá một lần duy nhất.");
+
+  // rating database
+  const product = await ajaxRequest(urlLikeProduct, { product_id });
+  productLikeValue.innerText = product.product_likes;
+
+  // set storage rating
+  dataStorage[product_id] = true;
+  localStorage.setItem(".like_products", JSON.stringify(dataStorage));
+});

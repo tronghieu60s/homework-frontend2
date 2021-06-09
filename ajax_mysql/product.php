@@ -63,14 +63,16 @@ $item = $productModel->getProductById($id);
             <div class="col-md-8">
                 <p class="d-none" id="productId"><?php echo $id ?></p>
                 <h1><?php echo $item['product_name'] ?></h1>
-                <div class="mb-2" id="renderAverageStar">
-                    
-                </div>
+                <div class="mb-2" id="renderAverageStar"></div>
                 <p><?php echo $item['product_price'] ?></p>
                 <p>
                     <?php echo $item['product_description'] ?>
                 </p>
                 <p><?php echo $item['product_view'] ?></p>
+                <button id="btnLikeProduct" type="button" class="btn btn-primary">
+                    <i class="fa fa-thumbs-up" style="font-size: 20px;" aria-hidden="true"></i>
+                    <span id="productLikeValue" class="badge badge-warning"><?php echo $item['product_likes'] ?></span>
+                </button>
             </div>
         </div>
         <h3 class="mt-5">Bình Luận</h3>

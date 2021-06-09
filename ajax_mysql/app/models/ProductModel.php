@@ -28,6 +28,15 @@ class ProductModel extends Db
         return parent::select($sql)[0];
     }
 
+    // Lấy chi tiết sản phẩm theo id
+    public function updateLikeProductById($id)
+    {
+        //2. Viết câu SQL
+        $sql = parent::$connection->prepare("UPDATE `products` SET `product_likes` = `product_likes` + 1 WHERE `products`.`id` = ?");
+        $sql->bind_param('i', $id);
+        return $sql->execute();
+    }
+
     // Lấy sản phẩm theo danh mục
     public function getProductsByCategory($categoryId)
     {
