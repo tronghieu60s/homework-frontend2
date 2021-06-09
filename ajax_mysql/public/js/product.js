@@ -101,19 +101,30 @@ function onRenderAverageStar(comments) {
   renderAverageStar.innerHTML = renderStar + ` - ${averageStars}/5 sao`;
 }
 
+function loadProductLikeText() {
+  const product_id = productId.innerText;
+  const dataStorage = JSON.parse(localStorage.getItem(".like_products")) || {};
+  productLikeText.innerText = dataStorage[product_id] ? "Unlike" : "Like";
+}
+
+loadProductLikeText();
+
 btnLikeProduct.addEventListener("click", async () => {
   const product_id = productId.innerText;
 
   // get data storage
   const dataStorage = JSON.parse(localStorage.getItem(".like_products")) || {};
-  if (dataStorage[product_id])
-    return alert("Bạn chỉ được đánh giá thích một lần duy nhất.");
+  if (dataStorage[product_id]) dataStorage[product_id] = false;
+  else dataStorage[product_id] = true;
 
   // rating database
-  const product = await ajaxRequest(urlLikeProduct, { product_id });
+  const product = await ajaxRequest(urlLikeProduct, {
+    product_id,
+    like: dataStorage[product_id],
+  });
   productLikeValue.innerText = product.product_likes;
 
   // set storage rating
-  dataStorage[product_id] = true;
   localStorage.setItem(".like_products", JSON.stringify(dataStorage));
+  loadProductLikeText();
 });

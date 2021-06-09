@@ -71,6 +71,7 @@ $item = $productModel->getProductById($id);
                 <p><?php echo $item['product_view'] ?></p>
                 <button id="btnLikeProduct" type="button" class="btn btn-primary">
                     <i class="fa fa-thumbs-up" style="font-size: 20px;" aria-hidden="true"></i>
+                    <span id="productLikeText">Like</span>
                     <span id="productLikeValue" class="badge badge-warning"><?php echo $item['product_likes'] ?></span>
                 </button>
             </div>
