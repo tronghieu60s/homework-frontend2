@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLION - Masonry Blog</title>
+    <!-- Font Awesome 4, Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Masonry -->
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+        integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+        async></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./public/css/style.css">
+</head>
+
+<body>
+    <div class="ill-container container my-4">
+        <div class="ill-menu-wrapper">
+            <ul class="ill-menu">
+                <li><span>Show case</span></li>
+                <li><span>Blogs</span></li>
+                <li><span>Questions</span></li>
+                <li><span>Help</span></li>
+                <li><span>Contact</span></li>
+            </ul>
+        </div>
+        <header class="ill-header">
+            <nav class="navbar navbar-expand-md navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="./public/images/logo.png" alt="">
+                </a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                    data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home <i class="fa fa-ellipsis-h ml-1"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Fashion <i class="fa fa-ellipsis-h ml-1"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Relax <i class="fa fa-ellipsis-h ml-1"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="ill-main py-3 pb-4">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <div class="col-sm-6 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/1.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi deserunt
+                                voluptas illum praesentium explicabo hic...
+                            </p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/2.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis...
+                            </p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/3.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit saepe...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/4.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing elit</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/5.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit saepe...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/6.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit saepe...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/7.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem, ipsum dolor sit amet consectetur adipisicing</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit saepe...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/8.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis..</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/9.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit amet consectetur</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="./public/images/10.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">Lorem ipsum dolor sit</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
+                                suscipit...</p>
+                            <div class="d-flex flex-wrap">
+                                <div class="mr-2">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                                </div> |
+                                <div class="mx-2">
+                                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                    <span>3</span>
+                                </div> |
+                                <div class="ml-2">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                    <span>2 hours ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="postModelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 id="postModelTitle" class="modal-title">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="d-flex">
+                                <img style="width: 200px;" src="./public/images/1.jpg" alt="">
+                                <div class="ml-3">
+                                    <div class="d-flex flex-wrap">
+                                        <div class="mr-2">
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                            <i class="fa fa-star-o" aria-hidden="true"></i>
+                                        </div> |
+                                        <div class="mx-2">
+                                            <i class="fa fa-comment-o" aria-hidden="true"></i>
+                                            <span>3</span>
+                                        </div> |
+                                        <div class="ml-2">
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                            <span>2 hours ago</span>
+                                        </div>
+                                    </div>
+                                    <p class="mt-2">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia
+                                        esse alias fugit perferendis nisi! Minus nisi recusandae, aspernatur magni
+                                        dignissimos, cupiditate impedit beatae, eligendi consequuntur eum unde
+                                        blanditiis omnis dicta!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="ill-footer text-center py-5">
+        <span class="ill-footer-copyright">
+            Trần Trọng Hiếu - 19211TT1201 | © FIT-TDC 2020 Lập trình website giỏi
+        </span>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="./public/js/main.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
